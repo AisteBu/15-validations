@@ -1,0 +1,16 @@
+{
+  "name": "15-validations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "test": "jest --watchAll --coverage"
+  },
+  "keywords": [],
+  "author": "Aiste Buneviciene",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
