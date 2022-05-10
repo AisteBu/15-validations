@@ -19,11 +19,23 @@ class Validation {
         return true;
     }
 
-    isValidEmail() {
+    isValidEmail(email) {
+        if (typeof email !== 'string' ||
+            email.length < 6 ||
+            email.indexOf('@') === -1 ||
+            email[0] === '@' ||
+            email.slice(-4).indexOf('@') > -1 ||
+            this.countSimbols(email, '@') > 1) {
+            return false;
+        }
         return true;
     }
 
-    isValidMessage() {
+    isValidMessage(msg) {
+        if (typeof msg !== 'string' ||
+            msg === '') {
+            return false;
+        }
         return true;
     }
 
@@ -60,5 +72,18 @@ class Validation {
 
         return letter === letter.toUpperCase();
     }
+
+    countSimbols(text, letter) {
+        let count = 0;
+
+        for (const t of text) {
+            if (t === letter) {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }
 
+module.exports = Validation;
